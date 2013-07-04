@@ -1,0 +1,53 @@
+/**
+作成：山本孟則
+*/
+ForestViewで呼び出してくるクラス
+import java.awt.Point;
+import java.awt.Graphics;
+import java.awt.image.BufferedImage;
+import javax.swing.JPanel;
+import java.awt.Color;
+import javax.swing.JFrame;
+
+【生成するフィールド】
+-forestModel:ForestModel
+-forestController:ForestController
+
+【使うメソッド】
+#PaintCompornent:void{再定義し、木を生成する仕様に変更する(木：線、枠、文字)}
+（フレーム作成時に自動でよびだされるので仕様を変えなくてはいけない）
++update():void{
+--this.repaint()はViewのクラスをそのまま使う--
+this.repaint(0, 0, this.getWidth(), this.getHeight());return;
+}
+JFrame  ←　　全体のキャンバスの板部分で、BARの部分の処理とかのみ。中の絵には干渉しない!!
+コンストラクタ ← frameInitが自動で呼ばれる
+CreatRootPane ← コンストラクタメソッドによって呼ばれる
+
+【生成するインスタンス】
+ForestModel forestModel
+ForestController forestController
+StringView stringView
+
+StringViewで呼び出してくるクラス
+import java.awt.Point;
+import java.awt.Graphics;
+import java.awt.image.BufferedImage;
+import javax.swing.JPanel; 
+import java.awt.Color;
+
+【使うメソッド】
+#PaintCompornent:void{再定義し、木を生成する仕様に変更する(木：線、枠、文字)}
+（フレーム作成時に自動でよびだされるので仕様を変えなくてはいけない）
++update():void{
+--this.repaint()はViewのクラスをそのまま使う--
+this.repaint(0, 0, this.getWidth(), this.getHeight());return;
+}
+
+
+【生成するインスタンス】
+ForestModel forestModel
+ForestController forestController
+
+
+modelがviewを作る
