@@ -1,3 +1,5 @@
+package Forest;
+
 /**
  *文字列表示のView
  */
@@ -47,7 +49,7 @@ public class StringView extends JPanel{
      *未定(2013年7月5日)
      */
     public StringView(Node aNode){
-	StringView.setNode(aNode);
+		setNode(aNode);
     }
     /**
      *Nodeの位置情報(x,y)を受け取り、updateを呼び出す。

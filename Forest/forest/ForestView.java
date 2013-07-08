@@ -1,3 +1,5 @@
+package Forest;
+
 /**
  *ForestのView
  */
@@ -7,7 +9,7 @@ import java.awt.image.BufferedImage;
 import javax.swing.JPanel;
 import java.awt.Color;
 
-public class ForestView extends MVC.View{
+public class ForestView extends mvc.View{
     /**
      *情報を握っているModelのインスタンスを束縛する
      *未定（2013年07月05日）
@@ -27,8 +29,9 @@ public class ForestView extends MVC.View{
      *コンストラクタ
      *未定（2013年07月05日）
      */
-    public ForestView(){
-    }
+    public ForestView(ForestModel aModel,ForestController aController){
+    	super(aModel,aController);	
+	}
     /**
      *スクロール量（offset）を考慮してモデル画像（picture）をペイン（パネル）内に描画することである
      *多分何もしない

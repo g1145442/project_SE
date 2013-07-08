@@ -1,3 +1,5 @@
+package Forest;
+
 /**
  *Forestのコントローラー
  */
@@ -6,14 +8,16 @@ import java.awt.Component;
 import java.awt.Cursor;
 import java.awt.Point;
 
+import java.awt.event.ActionEvent;
 import java.awt.event.MouseEvent;
+import java.awt.event.ActionListener;
 
 import java.awt.event.MouseWheelEvent;
 import java.awt.event.MouseWheelListener;
 
 import javax.swing.event.MouseInputAdapter;
 
-public class ForestController extends MVC.Controller implements ActionListener{
+public class ForestController extends mvc.Controller implements ActionListener{
     /**
      *情報を握っているModelのインスタンスを束縛する
      *未定（2013年07月05日）

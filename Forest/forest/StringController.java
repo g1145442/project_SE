@@ -1,12 +1,16 @@
+package Forest;
+
 /**
  *StringViewのController
  */
+
+import java.awt.event.MouseListener;
 import java.awt.Component;
 import java.awt.Cursor;
 import java.awt.Point;
 import java.awt.event.MouseEvent;
 
-public class StringController extends MouseListener{
+public class StringController implements MouseListener{
     /**
      *文字描画に必要なStringViewのインスタンスを束縛する
      *未定（2013年07月05日）
