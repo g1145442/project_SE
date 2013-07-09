@@ -59,8 +59,11 @@ class ForestModel extends mvc.Model{
 	 * 深さ探索を実行する。
 	 * 良好（2013年7月5日）
 	 */
-	public void depthSearch(){
-	
+	public void depthSearch(Node aNode){
+		for(Node node:aNode.getChildNode()){
+			depthSearch(node);
+		}
+		System.out.println("番号:"+aNode.getMyNum()+",文字:"+aNode.getMyString()+",深さ:"+aNode.getMyDepth());
 	}
 
 	/**

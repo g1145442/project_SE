@@ -56,13 +56,13 @@ class TreeReader extends Thread{
 					else if(e.find()){
 						if(depth==0){
 							treeMap.put(wordBuilder.toString(),depth);
-							System.out.println(wordBuilder.toString()+":"+depth);
+							//System.out.println(wordBuilder.toString()+":"+depth);
 							wordBuilder = new StringBuilder();
 							state = TreeState.MADENODE;
 						}
 						else{
 							treeMap.put(wordBuilder.toString(),depth);
-							System.out.println(wordBuilder.toString()+":"+depth);
+							//System.out.println(wordBuilder.toString()+":"+depth);
 							wordBuilder = new StringBuilder();
 							depth=0;
 							state = TreeState.MADENODE;		

@@ -43,7 +43,6 @@ class ForestReader{
 			file.close();
 
 			String[] splitText = text.split("branches:\n|trees:\n|nodes:\n");
-			System.out.println(splitText[1]);
 			TreeReader treeReader = new TreeReader(splitText[1],treeMap);
 			NodeReader nodeReader = new NodeReader(splitText[2],nodeMap);
 			BranchReader branchReader = new BranchReader(splitText[3],branchList);
@@ -66,12 +65,19 @@ class ForestReader{
 			node.setMyNum(i);
 			node.setMyString(nodeMap.get(i));
 			node.setMyDepth(treeMap.get(nodeMap.get(i)));
+			if(treeMap.get(nodeMap.get(i))==0){
+				rootList.add(node);
+			}
+
 			nodeAllMap.put(i,node);
 		}
 		for(SmallBranch aBranch:branchList){	
 			int parent = aBranch.getParentNum();
 			int child = aBranch.getChildNum();
 			nodeAllMap.get(parent).setParentNode(nodeAllMap.get(child));
+		}
+		for(Node aNode:rootList){
+		forestModel.depthSearch(aNode);
 		}
 	}
 }
