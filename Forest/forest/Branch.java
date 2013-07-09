@@ -9,7 +9,7 @@ class Branch{
 	 * 枝の情報を管理する。
 	 * 良好（2013年7月5日）
 	 */
-	HashMap<Node,Node> brachMap;
+	HashMap<Node,Node> branchMap;
 
 	/**
 	 * インスタンスを生成して初期化して応答する。
@@ -24,7 +24,7 @@ class Branch{
 	 * 良好（2013年7月5日）
 	 */
 	public void setBranchMap(HashMap<Node,Node> aMap){
-		
+		branchMap = aMap;		
 	}
 
 
@@ -33,6 +33,6 @@ class Branch{
 	 * 良好（2013年7月5日）
 	 */
 	public HashMap<Node,Node> getBranchMap(){
-		return null;
+		return branchMap;
 	}
 }

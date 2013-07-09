@@ -50,7 +50,12 @@ class Node{
 	 * 良好（2013年7月5日）
 	 */
 	public Node(){
-	
+		myDepth=0;
+		myString=null;
+		parentNode = new ArrayList<Node>();
+		childNode = new ArrayList<Node>();
+		myNum=0;
+		myPoint = new Point();
 	}
 
 	/**
@@ -58,7 +63,7 @@ class Node{
 	 * 良好（2013年7月5日）
 	 */
 	public void setMyDepth(int aDepth){
-		
+		myDepth=aDepth;	
 	}
 
 	/**
@@ -66,7 +71,7 @@ class Node{
 	 * 良好（2013年7月5日）
 	 */
 	public int getMyDepth(){
-		return 0;	
+		return myDepth;	
 	}
 
 	/**
@@ -74,7 +79,7 @@ class Node{
 	 * 良好（2013年7月5日）
 	 */
 	public void setMyString(String aStr){
-		
+		myString = aStr;	
 	}
 
 	/**
@@ -82,15 +87,15 @@ class Node{
 	 * 良好（2013年7月5日）
 	 */
 	public String getMyString(){
-		return null;
+		return myString;
 	}
 
 	/**
 	 * 親ノードを束縛する。
 	 * 良好（2013年7月5日）
 	 */
-	public void setParentNode(ArrayList<Node> aList){
-	
+	public void setParentNode(Node aNode){
+			parentNode.add(aNode);
 	}
 
 	/**
@@ -98,15 +103,15 @@ class Node{
 	 * 良好（2013年7月5日）
 	 */
 	public ArrayList<Node> getParentNode(){
-		return null;
+		return parentNode;
 	}
 
 	/**
 	 * 子ノードを束縛する。
 	 * 良好（2013年7月5日）
 	 */
-	public void setChildNode(ArrayList<Node> aList){
-	
+	public void setChildNode(Node aNode){
+		childNode.add(aNode);	
 	}
 
 	/**
@@ -114,7 +119,7 @@ class Node{
 	 * 良好（2013年7月5日）
 	 */
 	public ArrayList<Node> getChildNode(){
-		return null;
+		return childNode;
 	}
 
 	/**
@@ -122,7 +127,7 @@ class Node{
 	 * 良好（2013年7月5日）
 	 */
 	public void setMyNum(int aNum){
-			
+			myNum = aNum;	
 	}
 
 	/**
@@ -130,7 +135,7 @@ class Node{
 	 * 良好（2013年7月5日）
 	 */
 	public int getMyNum(){
-		return 0;
+		return myNum;
 	}
 
 	/**
@@ -138,7 +143,7 @@ class Node{
 	 * 良好（2013年7月5日）
 	 */
 	public void setMyPoint(Point aPoint){
-	
+		myPoint = aPoint;	
 	}
 
 	/**
@@ -146,6 +151,6 @@ class Node{
 	 * 良好（2013年7月5日）
 	 */
 	public Point getMyPoint(){
-		return null;
+		return myPoint;
 	}
 }

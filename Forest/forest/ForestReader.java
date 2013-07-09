@@ -25,6 +25,7 @@ class ForestReader{
 		nodeMap = new HashMap<Integer,String> ();
 		treeMap = new HashMap<String,Integer>();
 		branchList = new ArrayList<SmallBranch> ();		
+		forestModel = new ForestModel();
 	}
 
 	public void fileRead(){
@@ -43,7 +44,7 @@ class ForestReader{
 
 			String[] splitText = text.split("branches:\n|trees:\n|nodes:\n");
 			System.out.println(splitText[1]);
-			TreeReader treeReader = new TreeReader(splitText[1],treeMap,rootList);
+			TreeReader treeReader = new TreeReader(splitText[1],treeMap);
 			NodeReader nodeReader = new NodeReader(splitText[2],nodeMap);
 			BranchReader branchReader = new BranchReader(splitText[3],branchList);
 			//System.out.println(splitText[3]);
@@ -51,15 +52,26 @@ class ForestReader{
 			nodeReader.start();
 			treeReader.start();
 			Thread.sleep(100);
-
+			setModel();
 		}catch(Exception e){
 			System.out.println(e);
 		}
 	}
 
-	public void setModel(ForestModel aModel){
-	
+	public void setModel(){
+		HashMap<Integer,Node> nodeAllMap = new HashMap<Integer,Node>();
+		forestModel.setRootList(rootList);
+		for(int i=1;i<nodeMap.size();i++){
+			Node node = new Node();
+			node.setMyNum(i);
+			node.setMyString(nodeMap.get(i));
+			node.setMyDepth(treeMap.get(nodeMap.get(i)));
+			nodeAllMap.put(i,node);
+		}
+		for(SmallBranch aBranch:branchList){	
+			int parent = aBranch.getParentNum();
+			int child = aBranch.getChildNum();
+			nodeAllMap.get(parent).setParentNode(nodeAllMap.get(child));
+		}
 	}
-
 }
-

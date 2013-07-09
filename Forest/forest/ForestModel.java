@@ -14,7 +14,7 @@ class ForestModel extends mvc.Model{
 	 * 樹状整列の木のインスタンスたちを束縛する。
 	 * 良好（2013年7月5日）
 	 */
-	private ArrayList<Tree> rootList;
+	private ArrayList<Node> rootList;
 
 	/**
 	 * Nodeに帯する座標たちを束縛する。
@@ -67,16 +67,16 @@ class ForestModel extends mvc.Model{
 	 * rootをインスタンスに束縛する。
 	 * 良好（2013年7月5日）
 	 */
-	public void setRootList(ArrayList<Tree> aList){
-	
+	public void setRootList(ArrayList<Node> aList){
+		rootList = aList;	
 	}
 
 	/**
 	 * 束縛しているrootの値を返す。
 	 * 良好（2013年7月5日）
 	 */
-	public ArrayList<Tree> getRootList(){
-		return null;
+	public ArrayList<Node> getRootList(){
+		return rootList;
 	}
 	
 	/**
@@ -84,7 +84,7 @@ class ForestModel extends mvc.Model{
 	 * 良好（2013年7月5日）
 	 */
 	public void setPointMap(HashMap<Node,Point> aMap){
-	
+		pointMap = aMap;	
 	}
 
 	/**
@@ -92,6 +92,6 @@ class ForestModel extends mvc.Model{
 	 * 良好（2013年7月5日）
 	 */
 	public HashMap<Node,Point> getPointMap(){
-		return null;
+		return pointMap;
 	}
 }
