@@ -1,7 +1,5 @@
 package Forest;
 
-
-
 /**
  * 一時的にBranchの内容を束縛するクラス
  * 良好（2013年7月5日）
@@ -13,20 +11,21 @@ class SmallBranch{
 	 * 親のノード番号を束縛。
 	 * 良好（2013年7月5日）
 	 */
-	int parentNum;
+	private int parentNum;
 
 	/**
 	 * 子のノード番号を束縛。
 	 * 良好（2013年7月5日）
 	 */
-	int childNum;
-
+	private int childNum;
 
 	/**
 	 * インスタンスを生成して初期化して応答する。
 	 * 良好（2013年7月5日）
 	 */
-	public SmallBranch(){
+	public SmallBranch(int pNum,int cNum){
+		parentNum = pNum;
+		childNum = cNum;	
 	}
 
 
@@ -35,7 +34,7 @@ class SmallBranch{
 	 * 良好（2013年7月5日）
 	 */
 	public void setParentNum(int aNum){
-	
+		parentNum = aNum;	
 	}
 
 	/**
@@ -43,7 +42,7 @@ class SmallBranch{
 	 * 良好（2013年7月5日）
 	 */
 	public int getParentNum(){
-		return 0;
+		return parentNum;
 	}
 
 	/**
@@ -51,7 +50,7 @@ class SmallBranch{
 	 * 良好（2013年7月5日）
 	 */
 	public void setChildNum(int aNum){
-
+		childNum = aNum;
 	}
 	
 	/**
@@ -59,7 +58,7 @@ class SmallBranch{
 	 * 良好（2013年7月5日）
 	 */
 	public int getChildNum(){
-		return 0;
+		return childNum;
 	}
 
 }
