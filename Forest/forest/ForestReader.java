@@ -60,7 +60,7 @@ class ForestReader{
 	public void setModel(){
 		HashMap<Integer,Node> nodeAllMap = new HashMap<Integer,Node>();
 		forestModel.setRootList(rootList);
-		for(int i=1;i<nodeMap.size();i++){
+		for(int i=1;i<=nodeMap.size();i++){
 			Node node = new Node();
 			node.setMyNum(i);
 			node.setMyString(nodeMap.get(i));
@@ -72,10 +72,14 @@ class ForestReader{
 			nodeAllMap.put(i,node);
 		}
 		for(SmallBranch aBranch:branchList){	
+			if(aBranch!=null){
 			int parent = aBranch.getParentNum();
 			int child = aBranch.getChildNum();
-			nodeAllMap.get(parent).setParentNode(nodeAllMap.get(child));
+			System.out.println(parent+","+child);	
+			nodeAllMap.get(parent).setChildNode(nodeAllMap.get(child));
+			}
 		}
+			
 		for(Node aNode:rootList){
 		forestModel.depthSearch(aNode);
 		}
