@@ -30,20 +30,27 @@ public class ForestView extends mvc.View{
      *未定（2013年07月05日）
      */
     public ForestView(ForestModel aModel,ForestController aController){
-    	super(aModel,aController);	
+    	super(aModel,aController);
+	
 	}
     /**
-     *スクロール量（offset）を考慮してモデル画像（picture）をペイン（パネル）内に描画することである
-     *多分何もしない
+     *ペイン（パネル）内に描画する内容を書く
+     *コンポーネント
      *未定（2013年07月05日）
      */
-    protected void paintComponent(){
+    public void paintComponent(Graphics aGraphics){
+	int width = this.getWidth();
+	int height = this.getHeight();
+	aGraphics.setColor(Color.white);
+	aGraphics.fillRect(0, 0, width, height);	
     }
 
     /**
-     *何もしない
+     *paintComponentを呼び出す
      *未定（2013年07月05日）
      */
     public void update(){
+	this.repaint(0, 0, this.getWidth(), this.getHeight());
+	return;
     }
 }
