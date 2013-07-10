@@ -1,6 +1,7 @@
 /**
 作成：山本孟則
 */
+
 ForestViewで呼び出してくるクラス
 import java.awt.Point;
 import java.awt.Graphics;
