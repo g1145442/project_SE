@@ -75,7 +75,6 @@ class ForestReader{
 			if(aBranch!=null){
 			int parent = aBranch.getParentNum();
 			int child = aBranch.getChildNum();
-			System.out.println(parent+","+child);	
 			nodeAllMap.get(parent).setChildNode(nodeAllMap.get(child));
 			}
 		}
