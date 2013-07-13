@@ -9,8 +9,14 @@ import java.awt.Graphics2D;
 import java.awt.image.BufferedImage;
 import javax.swing.JPanel;
 import java.awt.Color;
+import java.awt.Font;
+import java.awt.FontMetrics;
 
 public class StringView extends JPanel{
+
+       public static void main(String[] args){
+	   
+       }
     /**
      *情報を握っているForestModelのインスタンスを束縛する
      *未定(2013年7月5日)
@@ -88,11 +94,14 @@ public class StringView extends JPanel{
      */
     public void paintComponent(Graphics aGraphics){
 	Graphics2D aGraphics2D = (Graphics2D)aGraphics;
-	int width = getPoint().x;
-	int height = getPoint().y;
-	String word = getNode().getMyString(); 
-	//aGraphics2D.drawRect()
-	aGraphics2D.drawString(word, width, height);
+	int x = getPoint().x;
+	int y = getPoint().y;
+	String word = getNode().getMyString();
+	FontMetrics aFontMetrics = aGraphics2D.getFontMetrics(Font.decode(word));
+	int height = aFontMetrics.getHeight();
+	int width = aFontMetrics.stringWidth(word);
+	aGraphics2D.drawRect(x, y, width,height);
+	aGraphics2D.drawString(word,x,y);
 	return;
     }
     /**

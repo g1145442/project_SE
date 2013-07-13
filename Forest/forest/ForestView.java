@@ -32,19 +32,19 @@ public class ForestView extends mvc.View{
     public ForestView(ForestModel aModel,ForestController aController){
     	super(aModel,aController);
 	
-	}
+    }
     /**
-     *ペイン（パネル）内に描画する内容を書く
+     *updateやコンストラクタで呼ばれる。
+     *作られたPanel
      *コンポーネント
      *未定（2013年07月05日）
      */
     public void paintComponent(Graphics aGraphics){
 	int width = this.getWidth();
 	int height = this.getHeight();
-	aGraphics.setColor(Color.white);
+	aGraphics.setColor(Color.WHITE);
 	aGraphics.fillRect(0, 0, width, height);	
     }
-
     /**
      *paintComponentを呼び出す
      *未定（2013年07月05日）
